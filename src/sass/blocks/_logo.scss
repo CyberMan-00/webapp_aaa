@@ -1,0 +1,27 @@
+.logo {
+    width: 300px;
+    height: 84px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    // &__parent {
+        // position: absolute;
+        // top: 0;
+    // }
+    &__child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        // animation: pulse 1s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0% {scale: 1;}
+        50% {scale: 1.2;}
+        100% {scale: 1;}
+    }
+}

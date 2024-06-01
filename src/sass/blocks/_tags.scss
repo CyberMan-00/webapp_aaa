@@ -1,0 +1,20 @@
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 8px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    &__item {
+        color: $color-text-inverted;
+        background: $color-canvas-inverted;
+
+        width: fit-content;
+        padding: 8px 24px;
+        border-radius: 100px;
+    }
+}
+::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,6 @@
+@mixin img_scale_20 {
+    background-color: $color-brand-primary;
+    img {
+        scale: 1.2;
+    }
+}

@@ -1,0 +1,21 @@
+-----------------------------------------------------------------------------
+To start developing run the following command:
+-----------------------------------------------------------------------------
+
+--> terminal: npm install
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+IN CASE
+-----------------------------------------------------------------------------
+if there are some problems do the following:
+--> install node.js
+--> terminal: npm install -g gulp (npm install --save-dev gulp)
+--> terminal: npm install -g gulp-cli (npm install --save-dev gulp-cli)
+--> terminal: npm install -g browser-sync (npm install --save-dev browser-sync)
