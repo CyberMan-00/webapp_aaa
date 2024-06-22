@@ -22,10 +22,10 @@ body {
     padding: 0 8px;
 }
 // blocks
-@import 'blocks/logo.scss';
 @import 'blocks/header.scss';
+@import 'blocks/logo.scss';
+@import 'blocks/search.scss';
 @import 'blocks/tags.scss';
-@import 'blocks/feed.scss';
 
 //
 

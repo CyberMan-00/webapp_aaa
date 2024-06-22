@@ -1,20 +1,31 @@
 .tags {
-    display: flex;
-    gap: 8px;
     margin-top: 8px;
     padding: 8px;
+    
+    display: flex;
+    gap: 8px;
     overflow-x: scroll;
     overflow-y: hidden;
 
     &__item {
-        color: $color-text-inverted;
-        background: $color-canvas-inverted;
+        color: $color-text-primary;
+        background: $color-canvas-primary;
 
-        width: fit-content;
-        padding: 8px 24px;
-        border-radius: 100px;
+        // width: fit-content;
+        padding: 8px 16px;
+        border-radius: 8px;
     }
 }
 ::-webkit-scrollbar {
     display: none;
+}
+.active {
+    color: $color-text-inverted;
+    background: $color-canvas-inverted;
+}
+.clear__filters {
+    font-weight: 800;
+    text-align: center;
+    line-height: 40px;
+
 }
