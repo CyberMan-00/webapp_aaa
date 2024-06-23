@@ -10,6 +10,7 @@
     &__item {
         color: $color-text-primary;
         background: $color-canvas-primary;
+        font-size: 12px;
 
         width: fit-content;
         height: fit-content;
@@ -26,6 +27,8 @@
 }
 .clear__filters {
     font-weight: 800;
+    font-size: 12px;
+
     text-align: center;
     line-height: 40px;
     min-width: 93px;
