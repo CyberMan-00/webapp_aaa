@@ -4,14 +4,15 @@ padding: 16px;
 
 .card {
     display: flex;
-    justify-content: space-between;
+    gap: 16px;
+    // justify-content: space-between;
     border-radius: 8px;
     box-shadow: 0 0 3px 0 black;
     background: $color-canvas-primary;
 
-    padding: 8px;
+    // padding: 8px;
 
-    max-width: 544px;
+    max-width: fit-content;
     position: relative;
 
     color: $color-text-primary;
@@ -25,34 +26,47 @@ padding: 16px;
             // display: flex;
             // justify-content: center;
             // align-items: center;
-            // min-width: 100px;
+            width: 200px;
+            // height: 200px;
             border-radius: 8px;
-            min-width: 150px;
-            min-height: 150px;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 8px 0 0 8px;
+                border-radius: 8px 8px 8px 8px;
             }
         }
     &__content {
-        display: block;
-        padding: 8px;
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 8px 8px 0;
 
-        max-width: 350px;
+        &__wrappertop {
+            display: block;
+        }
+        &__wrapperbot {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        // max-width: 200px;
 
         &__title {
+            width: fit-content;
             max-width: 250px;
             font-weight: 800px;
             font-size: 20px;
-            margin-top: 8px;
+            margin-top: 16px;
             }
         &__descr {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400px;
             margin-top: 8px;
-            margin-bottom: 8px;
+            max-width: 300px;
         }
         &__percent {
             display: flex;
@@ -66,6 +80,28 @@ padding: 16px;
             top: 8px;
             right: 8px;
         }
+        &__price {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items:flex-end;
+
+            &__new {
+                display: flex;
+                gap: 4px;
+
+                color: $color-brand-primary;
+                font-weight: 800;
+                font-size: 20px;
+            }
+            &__old {
+                display: flex;
+                gap: 4px;
+
+                font-size: 12px;
+                text-decoration: line-through;
+            }
+        }
 
     }
 }
@@ -73,7 +109,8 @@ padding: 16px;
     padding: 8px 24px;
     border-radius: 8px;
     width: fit-content;
+    background: $color-brand-primary;
 
     color: $color-text-inverted;
-    background: $color-brand-primary;
+    font-size: 12px;
 }
