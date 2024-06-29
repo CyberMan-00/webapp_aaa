@@ -1,21 +1,22 @@
 .feed {
 padding: 16px;
 display: flex;
-gap: 16px;
+gap: 8px;
 flex-wrap: wrap;
-justify-content: space-around;
+justify-content: space-between;
 }
 
 .card {
     display: block;
 
     border-radius: 8px;
-    box-shadow: 0 0 3px 0 black;
+    box-shadow: 0 0 4px 0 $color-canvas-inverted;
     background: $color-canvas-primary;
 
     // padding: 8px;
 
-    max-width: fit-content;
+    max-width: 194px;
+    height: fit-content;
     position: relative;
 
     color: $color-text-primary;
@@ -25,61 +26,64 @@ justify-content: space-around;
     &:hover {
         text-decoration: none;
         color: $color-text-primary;
-        scale: 1.01;
-        }
-        
+    }
+    &__content {
+        padding: 8px;
+
         &__img {
-            height: 250px;
+            height: 160px;
             border-radius: 8px;
+            // padding: 8px;
             img {
                 width: 100%;
                 height: 100%;
-                object-fit:contain;
-                border-radius: 8px 8px 0px 0px;
+                object-fit: contain;
+                border-radius: 8px;
             }
-        }
-    &__content {
-        padding: 16px;
-        &__wrapperbot {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            // margin-top: 16px;
         }
         &__title {
             width: fit-content;
             max-width: 250px;
-            font-weight: 800px;
-            font-size: 20px;
-            }
-        &__descr {
+            font-weight: 700px;
             font-size: 12px;
-            font-weight: 400px;
             margin-top: 8px;
-            max-width: 300px;
-        }
+            line-height: 16px;
+
+
+            }
         &__percent {
             display: flex;
-            padding: 8px;
+            padding: 4px;
             gap: 4px;
-            background: $color-canvas-secondary;
-            border-radius: 8px;
+
+            background: $color-brand-secondary;
+            color: $color-text-inverted;
+
+            line-height: 16px;
+            font-size: 12px;
+            
+            border-radius: 0 8px 0 8px;
             width: fit-content;
             
             position: absolute;
-            top: 8px;
-            right: 8px;
+            top: 0;
+            right: 0
+            ;
         }
         &__date {
-            margin-top: 16px;
-            font-size: 12px;
+            margin-top: 8px;
+            font-size: 10px;
+            text-align: center;
+            font-weight: 700px;
+
         }
         &__price {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
             align-items:flex-end;
+            margin-top: 8px;
+            margin-bottom: 8px;
 
             &__new {
                 display: flex;
@@ -87,13 +91,14 @@ justify-content: space-around;
 
                 color: $color-brand-primary;
                 font-weight: 800;
-                font-size: 20px;
+                font-size: 16px;
             }
             &__old {
                 display: flex;
                 gap: 4px;
-
-                font-size: 12px;
+                
+                font-weight: 800;
+                font-size: 10px;
                 text-decoration: line-through;
             }
         }
@@ -103,8 +108,10 @@ justify-content: space-around;
 .button {
     padding: 8px 24px;
     border-radius: 8px;
-    width: fit-content;
+    width: 100%;
+    // width: fit-content;
     background: $color-brand-primary;
+    text-align: center;
 
     color: $color-text-inverted;
     font-size: 12px;
