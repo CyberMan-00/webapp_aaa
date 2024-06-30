@@ -1,21 +1,27 @@
 .feed {
-padding: 16px;
-display: flex;
-gap: 8px;
-flex-wrap: wrap;
-justify-content: space-between;
+padding: 8px;
+// display: flex;
+// gap: 8px;
+// flex-wrap: wrap;
+// justify-content: space-between;
+
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+grid-gap: 8px;
+
 }
 
 .card {
     display: block;
 
     border-radius: 8px;
-    box-shadow: 0 0 4px 0 $color-canvas-inverted;
+    // box-shadow: 0 0 4px 0 $color-canvas-inverted;
     background: $color-canvas-primary;
 
     // padding: 8px;
 
-    max-width: 194px;
+    // max-width: 194px;
     height: fit-content;
     position: relative;
 
