@@ -22,7 +22,7 @@ grid-gap: 8px;
     // padding: 8px;
 
     // max-width: 194px;
-    height: fit-content;
+    // height: fit-content;
     position: relative;
 
     color: $color-text-primary;
@@ -48,14 +48,12 @@ grid-gap: 8px;
             }
         }
         &__title {
-            width: fit-content;
             max-width: 250px;
+            height: 48px;
             font-weight: 700px;
             font-size: 12px;
             margin-top: 8px;
             line-height: 16px;
-
-
             }
         &__percent {
             display: flex;
@@ -73,24 +71,22 @@ grid-gap: 8px;
             
             position: absolute;
             top: 0;
-            right: 0
-            ;
+            right: 0;
         }
         &__date {
             margin-top: 8px;
             font-size: 10px;
             text-align: center;
             font-weight: 700px;
-
         }
         &__price {
-            display: flex;
-            gap: 8px;
+            // display: flex;
+            // gap: 8px;
             flex-wrap: wrap;
             align-items:flex-end;
             margin-top: 8px;
             margin-bottom: 8px;
-
+            position: relative;
             &__new {
                 display: flex;
                 gap: 4px;
@@ -108,14 +104,13 @@ grid-gap: 8px;
                 text-decoration: line-through;
             }
         }
-
     }
 }
 .button {
     padding: 8px 24px;
     border-radius: 8px;
     width: 100%;
-    // width: fit-content;
+
     background: $color-brand-primary;
     text-align: center;
 
@@ -127,12 +122,10 @@ grid-gap: 8px;
         background: $color-brand-secondary;
         transform: translateY(-5px);
         box-shadow: 0 5px 0px 0 black;
-
     }
     &:active {
         background: $color-brand-secondary;
         transform: translateY(0px);
         box-shadow: 0 0px 0px 0 black;
-
     }
 }
