@@ -1,15 +1,8 @@
 .feed {
-padding: 8px;
-// display: flex;
-// gap: 8px;
-// flex-wrap: wrap;
-// justify-content: space-between;
-
-
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-grid-gap: 8px;
-
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 8px;
 }
 
 .card {
@@ -127,5 +120,14 @@ grid-gap: 8px;
         background: $color-brand-secondary;
         transform: translateY(0px);
         box-shadow: 0 0px 0px 0 black;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .feed {
+        padding: 8px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 8px;
     }
 }
