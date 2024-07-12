@@ -120,8 +120,8 @@ grid-gap: 8px;
     transition: 0.5s all;
     &:hover {
         background: $color-brand-secondary;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 0px 0 black;
+        transform: translateY(-3px);
+        box-shadow: 0 3px 0px 0 black;
     }
     &:active {
         background: $color-brand-secondary;
