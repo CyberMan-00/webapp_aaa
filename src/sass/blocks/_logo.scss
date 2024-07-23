@@ -20,17 +20,18 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 900;
     padding: 8px;
     line-height: 30px;
-
+    
     span {
         padding: 8px;
         display: block;
         border-radius: 8px;
         background: $color-canvas-inverted;
-
+        
+        font-size: 20px;
         color: $color-text-inverted;
         font-style: italic;
         text-wrap: nowrap;
