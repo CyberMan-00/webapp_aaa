@@ -16,7 +16,7 @@ function renderProducts(products) {
     productList.innerHTML = ''; // Clear any existing content
 
     const filteredProducts = products//.filter(product => product[7] === FILTER_DATE);
-    // console.log(filteredProducts)
+    console.log(filteredProducts)
 
     if (filteredProducts.length === 0) {
         productList.innerHTML = '<p>No products found for the specified date.</p>';
@@ -24,6 +24,12 @@ function renderProducts(products) {
     }
 
     filteredProducts.forEach(product => {
+        
+        if (product.length < 9 || product.includes("")) {
+            console.log("product has undedfined fields", product)
+            return
+        }
+
         const [
             product_url, 
             product_img_url, 

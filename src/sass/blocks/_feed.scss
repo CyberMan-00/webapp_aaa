@@ -9,13 +9,7 @@
     display: block;
 
     border-radius: 8px;
-    // box-shadow: 0 0 4px 0 $color-canvas-inverted;
     background: $color-canvas-primary;
-
-    // padding: 8px;
-
-    // max-width: 194px;
-    // height: fit-content;
     position: relative;
 
     color: $color-text-primary;
@@ -38,10 +32,11 @@
                 height: 100%;
                 object-fit: contain;
                 border-radius: 8px;
+                mix-blend-mode: multiply;
             }
         }
         &__title {
-            max-width: 250px;
+            max-width: 300px;
             height: 48px;
             font-weight: 700px;
             font-size: 12px;
@@ -53,7 +48,7 @@
             padding: 4px;
             gap: 4px;
 
-            background: $color-brand-secondary;
+            background: $color-brand-primary;
             color: $color-text-inverted;
 
             line-height: 16px;
@@ -84,7 +79,7 @@
                 display: flex;
                 gap: 4px;
 
-                color: $color-brand-primary;
+                color: $color-brand-fourth;
                 font-weight: 800;
                 font-size: 16px;
             }
@@ -95,39 +90,80 @@
                 font-weight: 800;
                 font-size: 10px;
                 text-decoration: line-through;
+                color: $color-brand-tertiary;
             }
         }
     }
 }
-.button {
-    padding: 8px 24px;
-    border-radius: 8px;
-    width: 100%;
 
-    background: $color-brand-primary;
-    text-align: center;
-
-    color: $color-text-inverted;
-    font-size: 12px;
-
-    transition: 0.5s all;
-    &:hover {
-        background: $color-brand-secondary;
-        transform: translateY(-3px);
-        box-shadow: 0 3px 0px 0 black;
-    }
-    &:active {
-        background: $color-brand-secondary;
-        transform: translateY(0px);
-        box-shadow: 0 0px 0px 0 black;
-    }
-}
 
 @media only screen and (min-width: 1200px) {
     .feed {
         padding: 8px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-gap: 8px;
+    }
+    .card {
+
+        &__content {
+
+            &__img {
+                height: 250px;
+                border-radius: 8px;
+                // padding: 8px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    border-radius: 8px;
+                    mix-blend-mode: multiply;
+                }
+            }
+            
+            &__title {
+                max-width: 300px;
+                height: 48px;
+                font-weight: 700px;
+                font-size: 20px;
+                margin-top: 8px;
+                line-height: 24px;
+            }
+            &__percent {
+                display: flex;
+                padding: 8px;
+                gap: 4px;
+    
+                background: $color-brand-primary;
+                color: $color-text-inverted;
+    
+                line-height: 20px;
+                font-size: 20px;
+                
+                border-radius: 0 8px 0 8px;
+                width: fit-content;
+                
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &__date {
+                margin-top: 8px;
+                font-size: 16px;
+                text-align: center;
+                font-weight: 700px;
+            }
+            &__price{
+
+                &__new {
+                    font-weight: 800;
+                    font-size: 20px;
+                }
+                &__old {
+                    font-weight: 800;
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }
