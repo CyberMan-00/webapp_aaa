@@ -2,18 +2,31 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 8px 8px 0 8px;
     &__bar {
         padding: 8px;
         border-radius: 8px;
         border: 0;
-        background: $color-canvas-secondary;
+        width: 100%;
+        background: $color-canvas-primary;
     }
     &__icon {        
-        width: 30px;
-        height: 30px;
+        padding: 8px 24px;
+        border-radius: 8px;
 
+        background: $color-brand-primary;
+        color: $color-canvas-primary;
+
+        // width: 80px;
+        // height: 30px;    
+
+        transition: 0.5s all;
+        
         &:hover {
             cursor: pointer;
+            // width: 100px;
+
+            background: $color-text-primary;
         }
         
         img {
