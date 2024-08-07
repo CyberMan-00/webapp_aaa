@@ -10,21 +10,20 @@
         width: 100%;
         background: $color-canvas-primary;
     }
-    &__icon {        
+    &__button {        
         padding: 8px 24px;
         border-radius: 8px;
 
         background: $color-brand-primary;
         color: $color-canvas-primary;
+        text-wrap: nowrap;
 
-        // width: 80px;
-        // height: 30px;    
-
+        
+        width: fit-content;
         transition: 0.5s all;
         
         &:hover {
             cursor: pointer;
-            // width: 100px;
 
             background: $color-text-primary;
         }

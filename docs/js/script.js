@@ -119,7 +119,12 @@ function renderSearchQuery(products, searchQuery, date = 'skip') {
 
     // validate empty arrays
     if (productsArrays.length === 0) {
-        console.log('No products found for the specified filter');
+        // console.log('No products found for the specified filter');
+        const productDiv = document.createElement('div');
+        productDiv.className = 'card';
+        productDiv.style.padding = '8px'
+        productDiv.innerHTML = '<span> Sorry. I did not find any keyword in our database. Try another one.</span>'
+        feed.appendChild(productDiv)
         return;
     }
     
@@ -135,8 +140,8 @@ function renderSearchQuery(products, searchQuery, date = 'skip') {
     }
 }
 
+// loading products feed for the first time
 fetchProducts().then(products => renderDefault(products))
-
 
 // Searchbar logic
 let searchBar = document.querySelector(`#search-bar`)
@@ -145,7 +150,7 @@ let searchButton = document.querySelector(`#search-button`)
 searchButton.addEventListener('click', () => {
     const filterQuery = searchBar.value.toLowerCase()
     
-    if ( (filterQuery.length === 0) ) {
+    if ( (filterQuery.length === 0) || (filterQuery === ' ') ) {
         fetchProducts().then(products => renderDefault(products))
     } else {
         cleanFeed(feed)
