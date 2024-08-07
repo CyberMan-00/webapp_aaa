@@ -93,21 +93,69 @@ function renderDefault(products, date = 'skip') {
     }
 }
 
+function searchInTitles(rows, query) {
+    const titleIndex = 2;
+    const splitQuery = query.split(' ')
 
+    let filteredRows = rows.filter(row => {
+        return splitQuery.some(element => row[titleIndex]?.toLowerCase().split(' ').includes(element)) //checks if some elements frot splitQuery array is present in the title of product
+        // returt splitQuery.every(element => row[titleIndex]?.toLowerCase().split(' ').includes(element)) //checks if every element frot splitQuery array is present in the title of product
+        // return row[titleIndex]?.toLowerCase().split(' ').includes(query) // simple one to one search
+    });
+    return filteredRows
+}
+
+function renderSearchQuery(products, searchQuery, date = 'skip') {
+    // clean feed 
+    cleanFeed(feed)
+    // apply filtering if provided
+    let productsArrays = Array();
+
+    if (searchQuery) {
+        productsArrays = searchInTitles(products, searchQuery)
+    } else {
+        productsArrays = products
+    }
+
+    // validate empty arrays
+    if (productsArrays.length === 0) {
+        // console.log('No products found for the specified filter');
+        const productDiv = document.createElement('div');
+        productDiv.className = 'card';
+        productDiv.style.padding = '8px'
+        productDiv.innerHTML = '<span> Sorry. I did not find any keyword in our database. Try another one.</span>'
+        feed.appendChild(productDiv)
+        return;
+    }
+    
+    // validate record for empty strings, spaces or test content
+    if (productsArrays) {
+        productsArrays.forEach( (array, index) => {
+            if ( (array.includes('')) || (array.includes('test')) || (array.includes(' ')) ) {
+                return
+            } else {
+                renderProductItem(feed, array)
+            }
+        })
+    }
+}
+
+// loading products feed for the first time
 fetchProducts().then(products => renderDefault(products))
-
 
 // Searchbar logic
 let searchBar = document.querySelector(`#search-bar`)
-searchBar.addEventListener('input', () => {
+let searchButton = document.querySelector(`#search-button`)
+
+searchButton.addEventListener('click', () => {
     const filterQuery = searchBar.value.toLowerCase()
     
-    if ( (filterQuery.length === 0) ) {
-        console.log(filterQuery)
+    if ( (filterQuery.length === 0) || (filterQuery === ' ') ) {
         fetchProducts().then(products => renderDefault(products))
     } else {
-        console.log(filterQuery)
         cleanFeed(feed)
-        // fetch products and render filter
+        fetchProducts().then(products => renderSearchQuery(products, filterQuery))
     }
 })
+
+
