@@ -1,13 +1,20 @@
 'use strict'
 
-const API_KEY = 'AIzaSyDUtcS-fFi1VOWsxmtkoKJOY-9m0aObhqA';
-const SPREADSHEET_ID = '1k6_Sqjen2OfIkJZMYJl0Tk06QOTveRRUKGt-QPLNOhQ'; // between d/ **** /edit
-const RANGE = 'Sheet1!A2:I'; // Adjust range to include the new column
-const FILTER_DATE = '7/12/2024';
-
 const feed = document.querySelector(`#product-feed`);
 
+async function fetchCreds() {
+    const creds = await fetch('../../example.json').then(response => response.json())
+    return creds
+}
+
+
 async function fetchProducts() {
+    
+    const API_KEY = await fetchCreds().then(data => data.KEY)
+    const SPREADSHEET_ID = await fetchCreds().then(data => data.ProductFeed.ID)
+    const RANGE = await fetchCreds().then(data => data.ProductFeed.Range)
+    const FILTER_DATE = '7/12/2024';
+
     const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`);
     const data = await response.json();
     return data.values;
