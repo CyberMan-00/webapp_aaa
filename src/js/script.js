@@ -2,22 +2,13 @@
 
 const feed = document.querySelector(`#product-feed`);
 
-async function fetchCreds() {
-    const creds = await fetch('../../example.json').then(response => response.json())
-    return creds
-}
-
-
 async function fetchProducts() {
     
-    const API_KEY = await fetchCreds().then(data => data.KEY)
-    const SPREADSHEET_ID = await fetchCreds().then(data => data.ProductFeed.ID)
-    const RANGE = await fetchCreds().then(data => data.ProductFeed.Range)
-    const FILTER_DATE = '7/12/2024';
+    // const FILTER_DATE = '7/12/2024';
 
-    const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`);
+    const response = await fetch(`https://webappaaaapi.vercel.app/p-f-all`);
     const data = await response.json();
-    return data.values;
+    return data;
 }
 
 function cleanFeed(feed) {
@@ -105,10 +96,21 @@ function searchInTitles(rows, query) {
     const splitQuery = query.split(' ')
 
     let filteredRows = rows.filter(row => {
-        return splitQuery.some(element => row[titleIndex]?.toLowerCase().split(' ').includes(element)) //checks if some elements frot splitQuery array is present in the title of product
+        // Check if row[titleIndex] exists and proceed only if it's truthy
+        if (row[titleIndex]) {
+            return splitQuery.some(element => 
+                row[titleIndex].toLowerCase().split(' ').includes(element)
+            );
+        }
+        // If row[titleIndex] doesn't exist, return false to exclude this row
+        return false;
+    });
+
+    // let filteredRows = rows.filter(row => {
+        // return splitQuery.some(element => row[titleIndex]?.toLowerCase().split(' ').includes(element)) //checks if some elements frot splitQuery array is present in the title of product
         // returt splitQuery.every(element => row[titleIndex]?.toLowerCase().split(' ').includes(element)) //checks if every element frot splitQuery array is present in the title of product
         // return row[titleIndex]?.toLowerCase().split(' ').includes(query) // simple one to one search
-    });
+    // });
     return filteredRows
 }
 
