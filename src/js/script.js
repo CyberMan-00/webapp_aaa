@@ -1,5 +1,6 @@
 'use strict'
 
+//product render logic
 const feed = document.querySelector(`#product-feed`);
 
 async function fetchProducts() {
@@ -10,11 +11,9 @@ async function fetchProducts() {
     const data = await response.json();
     return data;
 }
-
 function cleanFeed(feed) {
     feed.innerHTML = '';
 }
-
 function renderProductItem(feed, array) {
         const [
             product_url, 
@@ -59,7 +58,6 @@ function renderProductItem(feed, array) {
     productDiv.innerHTML = productItemHTML
     feed.appendChild(productDiv)
 }
-
 function renderDefault(products, date = 'skip') {
     // clean feed 
     cleanFeed(feed)
@@ -90,7 +88,6 @@ function renderDefault(products, date = 'skip') {
         })
     }
 }
-
 function searchInTitles(rows, query) {
     const titleIndex = 2;
     const splitQuery = query.split(' ')
@@ -113,7 +110,6 @@ function searchInTitles(rows, query) {
     // });
     return filteredRows
 }
-
 function renderSearchQuery(products, searchQuery, date = 'skip') {
     // clean feed 
     cleanFeed(feed)
@@ -148,7 +144,6 @@ function renderSearchQuery(products, searchQuery, date = 'skip') {
         })
     }
 }
-
 // loading products feed for the first time
 fetchProducts().then(products => renderDefault(products))
 
@@ -167,4 +162,13 @@ searchButton.addEventListener('click', () => {
     }
 })
 
+// //side menu logic
+// const menuBurger = document.querySelector('.header__burger')
+// console.log(menuBurger)
+
+// menuBurger.addEventListener('click', () => {
+//     console.log('clicked!')
+
+
+// })
 

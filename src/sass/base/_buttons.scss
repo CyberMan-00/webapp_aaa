@@ -26,3 +26,13 @@
         font-size: 16px;
     }
 }
+.link {
+    width: fit-content;
+    color: $color-text-primary;
+    transition: all 0.3s;
+
+    &:hover {
+        text-decoration: none;
+        color: $color-brand-primary;
+    }
+}
