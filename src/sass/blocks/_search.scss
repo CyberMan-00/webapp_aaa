@@ -11,7 +11,7 @@
         background: $color-canvas-primary;
     }
     &__reload {
-        padding: 0 8px;
+        padding: 4px;
         border-radius: 8px;
 
         background: $color-brand-primary;
@@ -19,7 +19,7 @@
         text-wrap: nowrap;
 
         height: 40px;
-        width: 48px;
+        width: fit-content;
         transition: 0.5s all;
         
         &:hover {
@@ -31,7 +31,7 @@
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
     }
@@ -43,7 +43,7 @@
         color: $color-canvas-primary;
         text-wrap: nowrap;
 
-        
+        height: 40px;
         width: fit-content;
         transition: 0.5s all;
         
