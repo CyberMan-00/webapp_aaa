@@ -16,7 +16,9 @@
 
         background: $color-brand-primary;
         color: $color-canvas-primary;
+        display: flex;
         text-wrap: nowrap;
+        align-items: center;
 
         height: 40px;
         width: fit-content;
@@ -41,7 +43,10 @@
 
         background: $color-brand-primary;
         color: $color-canvas-primary;
+        
+        display: flex;
         text-wrap: nowrap;
+        align-items: center;
 
         height: 40px;
         width: fit-content;
