@@ -4,10 +4,10 @@
 
 
 // base files
-@import 'base/variables.scss';
-@import 'base/mixins.scss';
-@import 'base/general.scss';
-@import 'base/buttons.scss';
+@import 'base/_variables.scss';
+@import 'base/_mixins.scss';
+@import 'base/_general.scss';
+@import 'base/_buttons.scss';
 //
 
 * {
@@ -24,15 +24,15 @@ body {
 .container {
     max-width:  1200px;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 8px 8px;
 }
 // blocks
-@import 'blocks/header.scss';
-@import 'blocks/logo.scss';
-@import 'blocks/search.scss';
-@import 'blocks/tags.scss';
-@import 'blocks/feed.scss';
-@import 'blocks/disclaimer.scss';
+@import 'blocks/_header.scss';
+@import 'blocks/_logo.scss';
+@import 'blocks/_disclaimer.scss';
+@import 'blocks/_search.scss';
+@import 'blocks/_tags.scss';
+@import 'blocks/_feed.scss';
 //
 
 // media files
