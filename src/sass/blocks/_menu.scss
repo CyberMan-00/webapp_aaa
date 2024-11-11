@@ -1,0 +1,53 @@
+.menu {
+    padding: 48px 24px 24px 24px;
+    background: $color-brand-primary;
+    
+    max-width: 500px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    &__link {
+        display: block;
+        color: $color-text-primary;
+        font-weight: 700;
+        font-size: 24px;
+
+        transition: all 0.5s;
+
+        &:hover {
+            text-decoration: none;
+            color: $color-text-inverted;
+        }
+    }
+    
+    &__cross {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+
+        font-weight: 900;
+        font-size: 24px;
+        color: $color-text-primary;
+        
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover{
+            color: $color-text-inverted;
+        }
+
+    }
+}
+
+.active {
+    transform: translateX(0);
+}
+
+@media only screen and (min-width: 1200px) {
+
+}

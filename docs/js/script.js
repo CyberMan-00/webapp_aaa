@@ -162,13 +162,18 @@ searchButton.addEventListener('click', () => {
     }
 })
 
-// //side menu logic
-// const menuBurger = document.querySelector('.header__burger')
-// console.log(menuBurger)
+//side menu logic
+const menuBurger = document.querySelector('.header__burger')
+const menu = document.querySelector('.menu')
+const cross = document.querySelector('.menu__cross')
 
-// menuBurger.addEventListener('click', () => {
-//     console.log('clicked!')
+console.log(menuBurger)
 
+menuBurger.addEventListener('click', () => {
+    menu.classList.add('active')
+})
 
-// })
+cross.addEventListener('click', () => {
+    menu.classList.remove('active')
+})
 
